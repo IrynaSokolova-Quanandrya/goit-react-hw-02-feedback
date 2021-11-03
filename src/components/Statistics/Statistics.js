@@ -1,10 +1,9 @@
 import React from "react";
-import "./Statistics.scss";
+import "./Statistics.css";
 
 function Statistics({ good, neutral, bad, total, positivePercentage }) {
   return (
     <ul className="statistics__list">
-      <li>No feedback given</li>
       <li>Good:{good}</li>
       <li>Neutral: {neutral} </li>
       <li>Bad: {bad} </li>

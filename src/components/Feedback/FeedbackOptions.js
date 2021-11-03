@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./Feedback.scss";
-// import propTypes from 'prop-types';
+import "./FeedbackOptions.css";
+import propTypes from "prop-types";
 
 class FeedbackOptions extends Component {
   render() {
@@ -32,7 +32,7 @@ class FeedbackOptions extends Component {
   }
 }
 
-// FeedbackOptions.propTypes = {
-//     leaveFeedback: propTypes.func.isRequired
-// }
+FeedbackOptions.propTypes = {
+  onLeaveFeedback: propTypes.func.isRequired,
+};
 export default FeedbackOptions;

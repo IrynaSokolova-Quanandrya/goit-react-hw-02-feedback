@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Section from "./components/Section/Section";
 import FeedbackOptions from "./components/Feedback/FeedbackOptions";
 import Statistics from "./components/Statistics/Statistics";
+import Notification from "./components/Notification/Notification";
 
 class Feedback extends Component {
   state = {
@@ -30,20 +31,20 @@ class Feedback extends Component {
     return (
       <>
         <Section title="Please leave feedback">
-          <FeedbackOptions
-            // options={}
-            onLeaveFeedback={this.leaveFeedback.bind(this)}
-          />
+          <FeedbackOptions onLeaveFeedback={this.leaveFeedback.bind(this)} />
         </Section>
-        <Section title="Statistics">
+        <Section title="Statistics" />
+        {this.countTotalFeedback() ? (
           <Statistics
             good={good}
             neutral={neutral}
             bad={bad}
             total={this.countTotalFeedback()}
             positivePercentage={this.countPositiveFeedbackPercentage()}
-          ></Statistics>
-        </Section>
+          />
+        ) : (
+          <Notification message="No feedback given"></Notification>
+        )}
       </>
     );
   }
